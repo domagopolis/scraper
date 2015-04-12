@@ -1,0 +1,16 @@
+body{
+    width: 100%;
+}
+section{
+	width: 1000px;
+	margin: auto;
+}
+h1{
+	text-align: center;
+}
+h2{
+	text-align: center;
+}
+form{
+	text-align: center;
+}
