@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Apr 12, 2015 at 02:25 PM
+-- Generation Time: Apr 13, 2015 at 01:12 PM
 -- Server version: 5.5.29
 -- PHP Version: 5.4.10
 
@@ -26,6 +26,7 @@ SET time_zone = "+00:00";
 -- Table structure for table `affixes`
 --
 
+DROP TABLE IF EXISTS `affixes`;
 CREATE TABLE `affixes` (
   `affix_id` mediumint(8) unsigned NOT NULL AUTO_INCREMENT,
   `keyword` varchar(255) CHARACTER SET latin1 NOT NULL,
@@ -40,6 +41,7 @@ CREATE TABLE `affixes` (
 -- Table structure for table `affixes_keywords`
 --
 
+DROP TABLE IF EXISTS `affixes_keywords`;
 CREATE TABLE `affixes_keywords` (
   `affix_id` mediumint(8) unsigned NOT NULL,
   `keyword_id` mediumint(8) unsigned NOT NULL
@@ -51,6 +53,7 @@ CREATE TABLE `affixes_keywords` (
 -- Table structure for table `cached_image_urls`
 --
 
+DROP TABLE IF EXISTS `cached_image_urls`;
 CREATE TABLE `cached_image_urls` (
   `cached_image_url_id` mediumint(8) unsigned NOT NULL AUTO_INCREMENT,
   `domain_id` mediumint(8) NOT NULL,
@@ -66,6 +69,7 @@ CREATE TABLE `cached_image_urls` (
 -- Table structure for table `cached_image_urls_keywords`
 --
 
+DROP TABLE IF EXISTS `cached_image_urls_keywords`;
 CREATE TABLE `cached_image_urls_keywords` (
   `cached_image_url_id` mediumint(8) unsigned NOT NULL,
   `keyword_id` mediumint(8) unsigned NOT NULL
@@ -77,6 +81,7 @@ CREATE TABLE `cached_image_urls_keywords` (
 -- Table structure for table `cached_image_urls_queries`
 --
 
+DROP TABLE IF EXISTS `cached_image_urls_queries`;
 CREATE TABLE `cached_image_urls_queries` (
   `cached_image_urls_queries_id` mediumint(8) unsigned NOT NULL AUTO_INCREMENT,
   `cached_image_url_id` mediumint(8) unsigned NOT NULL,
@@ -90,6 +95,7 @@ CREATE TABLE `cached_image_urls_queries` (
 -- Table structure for table `cached_image_urls_utterances`
 --
 
+DROP TABLE IF EXISTS `cached_image_urls_utterances`;
 CREATE TABLE `cached_image_urls_utterances` (
   `cached_image_url_id` mediumint(8) unsigned NOT NULL,
   `utterance_id` mediumint(8) unsigned NOT NULL
@@ -101,6 +107,7 @@ CREATE TABLE `cached_image_urls_utterances` (
 -- Table structure for table `cached_urls`
 --
 
+DROP TABLE IF EXISTS `cached_urls`;
 CREATE TABLE `cached_urls` (
   `cached_url_id` mediumint(8) unsigned NOT NULL AUTO_INCREMENT,
   `domain_id` mediumint(8) NOT NULL,
@@ -123,6 +130,7 @@ INSERT INTO `cached_urls` (`cached_url_id`, `domain_id`, `path`, `query`, `cache
 -- Table structure for table `cached_urls_keywords`
 --
 
+DROP TABLE IF EXISTS `cached_urls_keywords`;
 CREATE TABLE `cached_urls_keywords` (
   `cached_urls_keyword_id` mediumint(8) unsigned NOT NULL AUTO_INCREMENT,
   `cached_url_id` mediumint(8) unsigned NOT NULL,
@@ -136,6 +144,7 @@ CREATE TABLE `cached_urls_keywords` (
 -- Table structure for table `cached_urls_queries`
 --
 
+DROP TABLE IF EXISTS `cached_urls_queries`;
 CREATE TABLE `cached_urls_queries` (
   `cached_urls_queries_id` mediumint(8) unsigned NOT NULL AUTO_INCREMENT,
   `cached_url_id` mediumint(8) unsigned NOT NULL,
@@ -149,6 +158,7 @@ CREATE TABLE `cached_urls_queries` (
 -- Table structure for table `cached_urls_utterances`
 --
 
+DROP TABLE IF EXISTS `cached_urls_utterances`;
 CREATE TABLE `cached_urls_utterances` (
   `cached_urls_utterance_id` mediumint(8) unsigned NOT NULL AUTO_INCREMENT,
   `cached_url_id` mediumint(8) unsigned NOT NULL,
@@ -162,6 +172,7 @@ CREATE TABLE `cached_urls_utterances` (
 -- Table structure for table `closed_morphemes`
 --
 
+DROP TABLE IF EXISTS `closed_morphemes`;
 CREATE TABLE `closed_morphemes` (
   `closed_morpheme_id` mediumint(8) unsigned NOT NULL AUTO_INCREMENT,
   `keyword` varchar(255) CHARACTER SET latin1 NOT NULL,
@@ -174,6 +185,7 @@ CREATE TABLE `closed_morphemes` (
 -- Table structure for table `closed_morphemes_keywords`
 --
 
+DROP TABLE IF EXISTS `closed_morphemes_keywords`;
 CREATE TABLE `closed_morphemes_keywords` (
   `closed_morpheme_id` mediumint(8) unsigned NOT NULL,
   `keyword_id` mediumint(8) unsigned NOT NULL
@@ -185,6 +197,7 @@ CREATE TABLE `closed_morphemes_keywords` (
 -- Table structure for table `domains`
 --
 
+DROP TABLE IF EXISTS `domains`;
 CREATE TABLE `domains` (
   `domain_id` mediumint(8) unsigned NOT NULL AUTO_INCREMENT,
   `scheme` varchar(10) NOT NULL DEFAULT 'http',
@@ -207,6 +220,7 @@ INSERT INTO `domains` (`domain_id`, `scheme`, `host`, `port`, `cached_time`) VAL
 -- Table structure for table `keywords`
 --
 
+DROP TABLE IF EXISTS `keywords`;
 CREATE TABLE `keywords` (
   `keyword_id` mediumint(8) unsigned NOT NULL AUTO_INCREMENT,
   `language_id` mediumint(8) unsigned DEFAULT NULL,
@@ -222,6 +236,7 @@ CREATE TABLE `keywords` (
 -- Table structure for table `languages`
 --
 
+DROP TABLE IF EXISTS `languages`;
 CREATE TABLE `languages` (
   `language_id` mediumint(8) unsigned NOT NULL AUTO_INCREMENT,
   `iso3letter` char(3) NOT NULL COMMENT 'ISO 639-2 Code',
@@ -730,6 +745,7 @@ INSERT INTO `languages` (`language_id`, `iso3letter`, `iso2letter`, `english_nam
 -- Table structure for table `morphemes`
 --
 
+DROP TABLE IF EXISTS `morphemes`;
 CREATE TABLE `morphemes` (
   `morpheme_id` mediumint(8) unsigned NOT NULL AUTO_INCREMENT,
   `keyword_id` mediumint(8) unsigned NOT NULL,
@@ -744,6 +760,7 @@ CREATE TABLE `morphemes` (
 -- Table structure for table `queries`
 --
 
+DROP TABLE IF EXISTS `queries`;
 CREATE TABLE `queries` (
   `query_id` mediumint(8) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL,
@@ -757,6 +774,7 @@ CREATE TABLE `queries` (
 -- Table structure for table `utterances`
 --
 
+DROP TABLE IF EXISTS `utterances`;
 CREATE TABLE `utterances` (
   `utterance_id` mediumint(8) unsigned NOT NULL AUTO_INCREMENT,
   `language_id` mediumint(8) unsigned DEFAULT NULL,
