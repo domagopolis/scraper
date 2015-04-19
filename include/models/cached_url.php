@@ -40,9 +40,9 @@ class cached_url extends orm{
 			}
 			$encoding = mb_detect_encoding( $content, array( "UTF-8", "UTF-32", "UTF-32BE", "UTF-32LE", "UTF-16", "UTF-16BE", "UTF-16LE" ), TRUE );
 
-			//if( $encoding !== "UTF-8" ) {
-				//$content = mb_convert_encoding( $content, "UTF-8", $encoding );
-			//}
+			if( $encoding !== "UTF-8" ) {
+				$content = mb_convert_encoding( $content, "UTF-8", $encoding );
+			}
 
 			//Extract links
 			preg_match_all( '#<a\s+href=[\'"]([^\'"]+)[\'"]\s*(?:title=[\'"]([^\'"]+)[\'"])?\s*>((?:(?!</a>).)*)</a>#i', $content, $matches );

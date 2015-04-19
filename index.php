@@ -11,15 +11,14 @@ foreach( $languages->language_arr as $language ){
 
 $results = array();
 $query = '';
-$type = FALSE;
+$type = 'web';
+$format = 'web';
 $language = new language;
 if( array_key_exists( 'search', $_GET ) AND array_key_exists( 'query', $_GET ) AND !empty( $_GET['query'] ) ){
 	$query = $_GET['query'];
 
 	if( array_key_exists( 'type', $_GET ) AND !empty( $_GET['type'] ) ){
 		$type = $_GET['type'];
-	}else{
-		$type = 'web';
 	}
 
 	if( array_key_exists( 'language', $_GET ) AND !empty( $_GET['language'] ) ){
@@ -28,8 +27,6 @@ if( array_key_exists( 'search', $_GET ) AND array_key_exists( 'query', $_GET ) A
 
 	if( array_key_exists( 'format', $_GET ) AND !empty( $_GET['format'] ) ){
 		$format = $_GET['format'];
-	}else{
-		$format = 'web';
 	}
 
 	$utterances = new utterance;
