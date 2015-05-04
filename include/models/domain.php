@@ -19,6 +19,8 @@ class domain extends orm{
 	}
 
 	public function get_parsed_domain( $parsed=array() ){
+		if( !array_key_exists('scheme', $parsed) ) $parsed['scheme'] = 'http';
+
 		$domain_str = $parsed['scheme'].'://'.$parsed['host'];
 		if( array_key_exists( 'port', $parsed ) AND !empty( $parsed['port'] ) ) $domain_str .= ':'.$parsed['port'];
 

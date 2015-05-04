@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Apr 13, 2015 at 01:12 PM
+-- Generation Time: May 04, 2015 at 02:42 PM
 -- Server version: 5.5.29
 -- PHP Version: 5.4.10
 
@@ -212,7 +212,7 @@ CREATE TABLE `domains` (
 --
 
 INSERT INTO `domains` (`domain_id`, `scheme`, `host`, `port`, `cached_time`) VALUES
-(1, 'http', 'www.theage.com.au', NULL, 0);
+(1, 'http', 'www.wikipedia.org', NULL, 0);
 
 -- --------------------------------------------------------
 

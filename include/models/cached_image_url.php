@@ -55,6 +55,8 @@ class cached_image_url extends orm{
 					$parsed['port'] = $parsed_domain['port'];
 				}
 
+				if( !array_key_exists('scheme', $parsed) ) $parsed['scheme'] = 'http';
+
 				if( array_key_exists('scheme', $parsed) ){
 					$domain = new domain;
 					$domain->get_parsed_domain( $parsed );
