@@ -47,7 +47,8 @@ class cached_url extends orm{
 			//Extract links
 			$regexp = "<a\s[^>]*href=(\"??)([^\" >]*?)\\1[^>]*>(.*)<\/a>";
 			preg_match_all( "/$regexp/siU", $content, $matches );
-			foreach( $matches[2] as $match ){
+
+			foreach( $matches[2] as $key => $match ){
 
 				$parsed = parse_url( $match );
 

@@ -87,6 +87,7 @@ class utterance extends orm{
 		$this->order_by( array( 'rank' => 'DESC' ) );
 		$this->having( array( 'rank>' => 0 ) );
 		$this->where( array( 'language_id' => $language->language_id ) );
+		$this->limit(30);
 		$this->find_all();
 
 		foreach( $this->utterance_arr as $utterance ){

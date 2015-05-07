@@ -1,11 +1,11 @@
 <?php include('include/general.php'); ?>
 <?php
 $languages = new language;
-$languages->where( array( 'active' => 1 ) )->order_by( array( 'english_name' ) )->find_all();
+$languages->order_by( array( 'english_name' ) )->find_all();
 $language_arr = array();
 foreach( $languages->language_arr as $language ){
-	if( $language->iso2letter ){
-		$language_arr[$language->iso2letter] = $language->english_name;
+	if( $language->iso2letter AND $language->native_name ){
+		$language_arr[$language->iso2letter] = $language->native_name;
 	}
 }
 
