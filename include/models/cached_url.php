@@ -50,6 +50,8 @@ class cached_url extends orm{
 
 			foreach( $matches[2] as $key => $match ){
 
+				if( substr($match, 0, 2) == '//' ) $match = 'http:'.$match;
+
 				$parsed = parse_url( $match );
 
 				if( !array_key_exists('path', $parsed) ) $parsed['path'] = '/';
