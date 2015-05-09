@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: May 07, 2015 at 02:32 PM
+-- Generation Time: May 09, 2015 at 11:59 AM
 -- Server version: 5.5.29
 -- PHP Version: 5.4.10
 
@@ -769,6 +769,20 @@ CREATE TABLE `queries` (
   `name` varchar(255) NOT NULL,
   `value` varchar(255) NOT NULL,
   PRIMARY KEY (`query_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `query_searches`
+--
+
+DROP TABLE IF EXISTS `query_searches`;
+CREATE TABLE `query_searches` (
+  `query_search_id` mediumint(8) unsigned NOT NULL AUTO_INCREMENT,
+  `language_id` mediumint(8) unsigned DEFAULT NULL,
+  `query` varchar(255) NOT NULL,
+  PRIMARY KEY (`query_search_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------

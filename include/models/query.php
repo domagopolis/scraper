@@ -2,7 +2,7 @@
 
 /*
 Name: query.php
-Description: Class to retrieve state province detail information.
+Description: Class to retrieve query detail information.
 */
 
 class query extends orm{
