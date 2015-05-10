@@ -22,7 +22,11 @@ if( array_key_exists( 'search', $_GET ) AND array_key_exists( 'query', $_GET ) A
 	}
 
 	if( array_key_exists( 'language', $_GET ) AND !empty( $_GET['language'] ) ){
-		$language->where( array( 'iso2letter' => $_GET['language'] ) )->find();
+		if( sizeof( $_GET['language'] ) === 2 ){
+			$language->where( array( 'iso2letter' => $_GET['language'] ) )->find();
+		}else{
+			$language->where( array( 'native_name' => $_GET['language'] ) )->find();
+		}
 	}
 
 	if( array_key_exists( 'format', $_GET ) AND !empty( $_GET['format'] ) ){
