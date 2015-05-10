@@ -35,6 +35,9 @@ class cached_image_url extends orm{
 				if( strstr( $image_tag, 'title=' ) ) $image_title = str_replace('title=', '', $image_tag );
 			}
 			if( !empty( $image_alt ) ){
+				
+				if( substr($image_src, 0, 2) == '//' ) $image_src = 'http:'.$image_src;
+
 				$parsed = parse_url( $image_src );
 
 				if( !array_key_exists('port', $parsed) ) $parsed['port'] = null;
