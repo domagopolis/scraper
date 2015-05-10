@@ -1,7 +1,7 @@
 <?php include('include/general.php'); ?>
 <?php
 $languages = new language;
-$languages->order_by( array( 'english_name' ) )->find_all();
+$languages->order_by( array( 'popular' => 'DESC', 'english_name' ) )->find_all();
 $language_arr = array();
 foreach( $languages->language_arr as $language ){
 	if( $language->iso2letter AND $language->native_name ){
@@ -39,6 +39,10 @@ if( array_key_exists( 'search', $_GET ) AND array_key_exists( 'query', $_GET ) A
 
 	$utterances = new utterance;
 	$results = array_merge( $results, $utterances->query_search( $query, $type, $language ) );
+}
+
+if( !$language->language_id ){
+	$language->where( array( 'iso2letter' => 'en' ) )->find();
 }
 
 $form = new form_builder( 'search-form', FALSE, 'get' );
