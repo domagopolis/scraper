@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: May 09, 2015 at 11:59 AM
+-- Generation Time: May 10, 2015 at 06:07 AM
 -- Server version: 5.5.29
 -- PHP Version: 5.4.10
 
@@ -225,7 +225,7 @@ CREATE TABLE `keywords` (
   `keyword_id` mediumint(8) unsigned NOT NULL AUTO_INCREMENT,
   `language_id` mediumint(8) unsigned DEFAULT NULL,
   `keyword` varchar(255) NOT NULL,
-  `count` int(11) NOT NULL,
+  `count` int(11) NOT NULL DEFAULT '0',
   `last_referenced` int(11) NOT NULL,
   PRIMARY KEY (`keyword_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
@@ -782,6 +782,8 @@ CREATE TABLE `query_searches` (
   `query_search_id` mediumint(8) unsigned NOT NULL AUTO_INCREMENT,
   `language_id` mediumint(8) unsigned DEFAULT NULL,
   `query` varchar(255) NOT NULL,
+  `count` int(11) NOT NULL DEFAULT '0',
+  `last_referenced` int(11) NOT NULL,
   PRIMARY KEY (`query_search_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 

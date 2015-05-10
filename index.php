@@ -30,8 +30,11 @@ if( array_key_exists( 'search', $_GET ) AND array_key_exists( 'query', $_GET ) A
 	}
 
 	$query_search = new query_search();
-	$query_search->language_id = $language->language_id;
-	$query_search->query = $query;
+	$query_search->where( array( 'language_id' => $language->language_id, 'query' => $query ) )->find();
+	if( !$query_search->query_search_id ){
+		$query_search->language_id = $language->language_id;
+		$query_search->query = $query;
+	}
 	$query_search->save();
 
 	$utterances = new utterance;
